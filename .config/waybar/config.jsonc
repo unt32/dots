@@ -1,0 +1,76 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 36,
+  "spacing": 4,
+
+  "modules-left": ["wlr/taskbar"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "tray",
+    "backlight",
+    "pulseaudio",
+    "network",
+    "cpu",
+    "memory",
+    "battery"
+  ],
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%a %Y-%m-%d %H:%M}",
+    "tooltip-format": "<tt>{calendar}</tt>"
+  },
+
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 20,
+    "tooltip-format": "{title}",
+    "on-click": "activate"
+  },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "BRT {percent}%",
+    "tooltip-format": "{percent}% brightness",
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-"
+  },
+
+  "pulseaudio": {
+    "format": "VOL {volume}%",
+    "format-muted": "MUTED",
+    "tooltip-format": "{desc}",
+    "on-click": "pavucontrol"
+  },
+
+  "network": {
+    "format-wifi": "WiFi {essid}",
+    "format-ethernet": "ETH",
+    "format-disconnected": "NET",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}\n↑{bandwidthUpBits} ↓{bandwidthDownBits}",
+    "tooltip-format-ethernet": "{ifname} {ipaddr}",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click": "networkmanager_dmenu"
+  },
+
+  "cpu": {
+    "format": "CPU {usage}%",
+    "tooltip-format": "{avg_frequency} GHz"
+  },
+
+  "memory": {
+    "format": "MEM {percentage}%",
+    "tooltip-format": "{used:0.1f}G / {total:0.1f}G"
+  },
+
+  "battery": {
+    "states": { "warning": 25, "critical": 12 },
+    "format": "BAT {capacity}%",
+    "format-charging": "CHR {capacity}%",
+    "format-plugged": "AC {capacity}%",
+    "tooltip-format": "{timeTo} · {power}W"
+  },
+
+  "tray": { "icon-size": 18, "spacing": 8 }
+}

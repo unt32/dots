@@ -1,0 +1,44 @@
+daemonize
+indicator
+clock
+timestr=%H:%M
+datestr=%a, %d.%m.%y
+
+# Background
+color=181818
+
+# Text
+font=JetBrainsMono Nerd Font
+text-color=ffffff
+text-clear-color=ffffff
+text-caps-lock-color=ffffff
+text-ver-color=ffffff
+text-wrong-color=ffffff
+
+# Ring
+ring-color=ffffff
+ring-clear-color=ffffff
+ring-caps-lock-color=ffffff
+ring-ver-color=ffffff
+ring-wrong-color=ff5555
+
+# Inside
+inside-color=000000
+inside-clear-color=000000
+inside-caps-lock-color=000000
+inside-ver-color=000000
+inside-wrong-color=000000
+
+# Highlights
+key-hl-color=ffffff
+bs-hl-color=ff5555
+verif-hl-color=ffffff
+wrong-hl-color=ff5555
+
+# Lines
+line-color=00000000
+line-clear-color=00000000
+line-caps-lock-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+separator-color=00000000

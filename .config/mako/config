@@ -1,0 +1,41 @@
+[hidden]
+format=(hidden)
+
+# --- Layout ---
+width=340
+height=110
+margin=10
+padding=10
+border-size=2
+border-radius=4
+
+background-color=#1e2127ff
+text-color=#ffffffff
+border-color=#aaaaaaff
+
+# --- Typography ---
+font=Monospace 12
+
+# --- Behavior ---
+default-timeout=5000
+max-icon-size=48
+markup=1
+actions=1
+
+# Urgency: low
+[urgency=low]
+background-color=#1e2127ee
+text-color=#5c6370ff
+border-color=#3e4451ff
+
+# Urgency: normal
+[urgency=normal]
+background-color=#1e2127ff
+text-color=#abb2bfff
+border-color=#61afefff
+
+# Urgency: high (critical)
+[urgency=high]
+background-color=#1e2127ff
+text-color=#e06c75ff
+border-color=#e06c75ff

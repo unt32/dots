@@ -1,0 +1,87 @@
+@define-color bg      #0b0b0b;
+@define-color fg      #d0d0d0;
+@define-color dim     rgba(208, 208, 208, 0.45);
+@define-color red     #ff5555;
+@define-color green   #50fa7b;
+@define-color yellow  #f1fa8c;
+@define-color cyan    #8be9fd;
+@define-color magenta #ff79c6;
+
+* {
+  font-family: monospace;
+  font-size: 12px;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+}
+
+window#waybar {
+  background: @bg;
+  color: @fg;
+  border-bottom: 1px solid rgba(208, 208, 208, 0.10);
+}
+
+/* Remove the inner floating card — make it flush */
+#waybar > box {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 2px 6px;
+}
+
+#clock,
+#backlight,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#battery,
+#tray,
+#taskbar {
+  padding: 2px 8px;
+  margin: 0 2px;
+  color: @fg;
+}
+
+#clock {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Taskbar */
+#taskbar button {
+  background: transparent;
+  color: @dim;
+  padding: 2px 8px;
+  margin: 0 2px;
+  border-radius: 4px;
+}
+#taskbar button.active {
+  color: @fg;
+  background: rgba(208, 208, 208, 0.10);
+  border: 1px solid rgba(208, 208, 208, 0.18);
+}
+#taskbar button:hover {
+  color: @fg;
+  background: rgba(208, 208, 208, 0.06);
+}
+
+/* Accent underlines */
+#backlight  { border-bottom: 2px solid rgba(255, 255, 255,  0.35); }
+#pulseaudio { border-bottom: 2px solid rgba(255, 121, 198,  0.7);  }
+#network    { border-bottom: 2px solid rgba(139, 233, 253,  0.7);  }
+#cpu        { border-bottom: 2px solid rgba(241, 250, 140,  0.7);  }
+#memory     { border-bottom: 2px solid rgba(80,  250, 123,  0.7);  }
+
+/* Battery states */
+#battery.warning  { color: @yellow; border-bottom: 2px solid rgba(241, 250, 140, 0.7); }
+#battery.critical { color: @red;    border-bottom: 2px solid rgba(255,  85,  85, 0.9); }
+#battery.charging { color: @green;  border-bottom: 2px solid rgba(80,  250, 123, 0.9); }
+#battery.plugged  { color: @fg;     border-bottom: 2px solid rgba(208, 208, 208, 0.4); }
+
+/* Network states */
+#network.disconnected { color: @dim; }
+#network.ethernet     { color: @cyan; }
+
+/* Tray */
+#tray > .passive { -gtk-icon-effect: dim; }
