@@ -37,16 +37,36 @@ window#waybar {
 #memory,
 #battery,
 #tray,
-#taskbar {
+#taskbar,
+#language {
   padding: 2px 8px;
   margin: 0 2px;
   color: @fg;
 }
 
-#clock {
+#clock,
+#language {
   font-size: 14px;
   font-weight: bold;
 }
+
+#bluetooth {
+  padding: 2px 8px;
+  margin: 0 2px;
+  color: @fg;
+  border-bottom: 2px solid rgba(139, 233, 253, 0.5);  /* soft cyan underline */
+}
+
+/* Bluetooth states */
+#bluetooth.connected    { color: @cyan; border-bottom: 2px solid rgba(139, 233, 253, 0.9); }
+#bluetooth.discoverable { color: @magenta; }
+#bluetooth.discovering  { color: @dim; }
+#bluetooth.disabled     { color: @dim; border-bottom: 2px solid rgba(208, 208, 208, 0.15); }
+
+/* Network states */
+#network.disabled                { color: @dim;  border-bottom: 2px solid rgba(208, 208, 208, 0.08); }
+#network.disconnected            { color: @dim;  border-bottom: 2px solid rgba(208, 208, 208, 0.15); }
+#network.wifi, #network.ethernet { color: @cyan; border-bottom: 2px solid rgba(139, 233, 253, 0.7);  }
 
 /* Taskbar */
 #taskbar button {
@@ -67,7 +87,8 @@ window#waybar {
 }
 
 /* Accent underlines */
-#backlight  { border-bottom: 2px solid rgba(255, 255, 255,  0.35); }
+/*#language   { border-bottom: 2px solid rgba(208, 208, 208,  0.4); }*/
+#backlight  { border-bottom: 2px solid rgba(255, 255, 255,  0.5); }
 #pulseaudio { border-bottom: 2px solid rgba(255, 121, 198,  0.7);  }
 #network    { border-bottom: 2px solid rgba(139, 233, 253,  0.7);  }
 #cpu        { border-bottom: 2px solid rgba(241, 250, 140,  0.7);  }
@@ -76,12 +97,9 @@ window#waybar {
 /* Battery states */
 #battery.warning  { color: @yellow; border-bottom: 2px solid rgba(241, 250, 140, 0.7); }
 #battery.critical { color: @red;    border-bottom: 2px solid rgba(255,  85,  85, 0.9); }
-#battery.charging { color: @green;  border-bottom: 2px solid rgba(80,  250, 123, 0.9); }
-#battery.plugged  { color: @fg;     border-bottom: 2px solid rgba(208, 208, 208, 0.4); }
-
-/* Network states */
-#network.disconnected { color: @dim; }
-#network.ethernet     { color: @cyan; }
+#battery.charging { color: @green;  border-bottom: 2px solid rgba(50, 208, 50, 0.8); }
+#battery.plugged  { color: @fg;     border-bottom: 2px solid rgba(50, 208, 50, 0.8); }
 
 /* Tray */
 #tray > .passive { -gtk-icon-effect: dim; }
+#tray > .needs-attention { -gtk-icon-effect: highlight; background: rgba(255, 85, 85, 0.2); }

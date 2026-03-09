@@ -163,7 +163,7 @@ binds {
 	XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
 	XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
 
-	Mod+O repeat=false { toggle-overview; }
+	Mod+W repeat=false { toggle-overview; }
 	Mod+Q repeat=false { close-window; }
 
 	// Focus column
@@ -275,8 +275,6 @@ binds {
 
 	Mod+V       { toggle-window-floating; }
 	Mod+Shift+V { switch-focus-between-floating-and-tiling; }
-
-	Mod+W { toggle-column-tabbed-display; }
 
 	Print       { screenshot; }
 	Ctrl+Print  { screenshot-screen; }
