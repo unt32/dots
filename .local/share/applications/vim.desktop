@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=vim
+Exec=alacritty -e vim %f
+Type=Application
+MimeType=text/plain;
+Terminal=false
+Icon=vim

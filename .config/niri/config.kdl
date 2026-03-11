@@ -67,7 +67,6 @@ layout {
 	preset-column-widths {
 		proportion 0.8
 		proportion 0.5
-		proportion 1.0
 	}
 
 	default-column-width { proportion 0.8; }
@@ -285,5 +284,5 @@ binds {
 	Mod+Shift+E  { quit; }
 	Ctrl+Alt+Delete { quit; }
 
-	Mod+Shift+P { power-off-monitors; }
+	Mod+P hotkey-overlay-title="Power Menu: fuzzel" { spawn "bash" "/home/unt32/.script/fuzzel_power.sh"; }
 }

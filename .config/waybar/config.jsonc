@@ -10,7 +10,7 @@
     "tray",
     "niri/language",
     "backlight",
-    "pulseaudio",
+    "wireplumber",
     "bluetooth",  
     "network",
 //    "cpu",
@@ -45,11 +45,12 @@
     "on-scroll-down": "brightnessctl set 5%-"
   },
 
-  "pulseaudio": {
+  "wireplumber": {
     "format": "VOL {volume}%",
     "format-muted": "MUTED",
-    "tooltip-format": "{desc}",
-    "on-click": "pavucontrol"
+    "tooltip-format": "{node_name}",
+    "node-type": "Audio/Sink",
+    "on-click": "alacritty -e wiremix"
   },
 
   "network": {

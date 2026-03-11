@@ -13,6 +13,7 @@
   border: none;
   border-radius: 0;
   min-height: 0;
+  transition: color 0.15s ease;
 }
 
 window#waybar {
@@ -21,7 +22,6 @@ window#waybar {
   border-bottom: 1px solid rgba(208, 208, 208, 0.10);
 }
 
-/* Remove the inner floating card — make it flush */
 #waybar > box {
   background: transparent;
   border: none;
@@ -29,10 +29,12 @@ window#waybar {
   padding: 2px 6px;
 }
 
+/* ── Base module style ─────────────────────────────────── */
 #clock,
 #backlight,
-#pulseaudio,
+#wireplumber,
 #network,
+#bluetooth,
 #cpu,
 #memory,
 #battery,
@@ -44,31 +46,63 @@ window#waybar {
   color: @fg;
 }
 
+/* ── Clock & Language ──────────────────────────────────── */
 #clock,
 #language {
   font-size: 14px;
   font-weight: bold;
 }
 
-#bluetooth {
-  padding: 2px 8px;
-  margin: 0 2px;
-  color: @fg;
-  border-bottom: 2px solid rgba(139, 233, 253, 0.5);  /* soft cyan underline */
+/* ── Accent underlines ─────────────────────────────────── */
+#backlight  { border-bottom: 2px solid rgba(255, 255, 255,  0.5); }
+#pulseaudio { border-bottom: 2px solid rgba(255, 121, 198,  0.7); }
+#network    { border-bottom: 2px solid rgba(139, 233, 253,  0.7); }
+#bluetooth  { border-bottom: 2px solid rgba(139, 233, 253,  0.5); }
+#cpu        { border-bottom: 2px solid rgba(241, 250, 140,  0.7); }
+#memory     { border-bottom: 2px solid rgba( 80, 250, 123,  0.7); }
+#battery    { border-bottom: 2px solid rgba(208, 208, 208,  0.3); }
+
+/* ── Audio ─────────────────────────────────────────────── */
+#wireplumber { border-bottom: 2px solid rgba(255, 121, 198, 0.7); }
+#wireplumber.muted {
+  color: @dim;
+  border-bottom: 2px solid rgba(208, 208, 208, 0.15);
 }
 
-/* Bluetooth states */
-#bluetooth.connected    { color: @cyan; border-bottom: 2px solid rgba(139, 233, 253, 0.9); }
-#bluetooth.discoverable { color: @magenta; }
+/* ── Network ───────────────────────────────────────────── */
+#network.wifi,
+#network.ethernet {
+  color: @cyan;
+  border-bottom: 2px solid rgba(139, 233, 253, 0.8);
+}
+#network.disconnected,
+#network.disabled {
+  color: @dim;
+  border-bottom: 2px solid rgba(208, 208, 208, 0.15);
+}
+
+/* ── Bluetooth ─────────────────────────────────────────── */
+#bluetooth.connected    { color: @cyan;    border-bottom: 2px solid rgba(139, 233, 253, 0.9); }
+#bluetooth.discoverable { color: @magenta; border-bottom: 2px solid rgba(255, 121, 198, 0.6); }
 #bluetooth.discovering  { color: @dim; }
-#bluetooth.disabled     { color: @dim; border-bottom: 2px solid rgba(208, 208, 208, 0.15); }
+#bluetooth.disabled     { color: @dim;     border-bottom: 2px solid rgba(208, 208, 208, 0.15); }
 
-/* Network states */
-#network.disabled                { color: @dim;  border-bottom: 2px solid rgba(208, 208, 208, 0.08); }
-#network.disconnected            { color: @dim;  border-bottom: 2px solid rgba(208, 208, 208, 0.15); }
-#network.wifi, #network.ethernet { color: @cyan; border-bottom: 2px solid rgba(139, 233, 253, 0.7);  }
+/* ── Battery ───────────────────────────────────────────── */
+#battery.warning  { color: @yellow; border-bottom: 2px solid rgba(241, 250, 140, 0.7); }
+#battery.critical {
+  color: @red;
+  border-bottom: 2px solid rgba(255, 85, 85, 0.9);
+  animation: blink 1.2s linear infinite alternate;
+}
+#battery.charging,
+#battery.plugged  { color: @green;  border-bottom: 2px solid rgba( 80, 250, 123, 0.7); }
 
-/* Taskbar */
+@keyframes blink {
+  from { color: @red; }
+  to   { color: @fg;  }
+}
+
+/* ── Taskbar ──────────────���────────────────────────────── */
 #taskbar button {
   background: transparent;
   color: @dim;
@@ -86,20 +120,9 @@ window#waybar {
   background: rgba(208, 208, 208, 0.06);
 }
 
-/* Accent underlines */
-/*#language   { border-bottom: 2px solid rgba(208, 208, 208,  0.4); }*/
-#backlight  { border-bottom: 2px solid rgba(255, 255, 255,  0.5); }
-#pulseaudio { border-bottom: 2px solid rgba(255, 121, 198,  0.7);  }
-#network    { border-bottom: 2px solid rgba(139, 233, 253,  0.7);  }
-#cpu        { border-bottom: 2px solid rgba(241, 250, 140,  0.7);  }
-#memory     { border-bottom: 2px solid rgba(80,  250, 123,  0.7);  }
-
-/* Battery states */
-#battery.warning  { color: @yellow; border-bottom: 2px solid rgba(241, 250, 140, 0.7); }
-#battery.critical { color: @red;    border-bottom: 2px solid rgba(255,  85,  85, 0.9); }
-#battery.charging { color: @green;  border-bottom: 2px solid rgba(50, 208, 50, 0.8); }
-#battery.plugged  { color: @fg;     border-bottom: 2px solid rgba(50, 208, 50, 0.8); }
-
-/* Tray */
-#tray > .passive { -gtk-icon-effect: dim; }
-#tray > .needs-attention { -gtk-icon-effect: highlight; background: rgba(255, 85, 85, 0.2); }
+/* ── Tray ──────────────────────────────────────────────── */
+#tray > .passive        { -gtk-icon-effect: dim; }
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background: rgba(255, 85, 85, 0.2);
+}
