@@ -95,6 +95,7 @@ layout {
 
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "swayidle" "-w" "timeout" "290" "niri msg action power-off-monitors" "timeout" "300" "swaylock" "timeout" "600" "systemctl hibernate" "resume" "niri msg action power-on-monitors" "before-sleep" "swaylock"
+spawn-at-startup "swaybg" "-m" "fill" "-i" "/home/unt32/Pictures/wallpaper"
 spawn-at-startup "waybar"
 spawn-at-startup "mako"
 spawn-at-startup "firefox"
@@ -145,9 +146,6 @@ binds {
 	Mod+E hotkey-overlay-title="Open a file manager: nautilus" { spawn "nautilus"; }
 	Mod+B hotkey-overlay-title="Open a Browser: firefox" { spawn "firefox"; }
 	Mod+Slash hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-	Alt+Escape hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
-
-	Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
 
 	XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
 	XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
@@ -281,7 +279,6 @@ binds {
 
 	Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
-	Mod+Shift+E  { quit; }
 	Ctrl+Alt+Delete { quit; }
 
 	Mod+P hotkey-overlay-title="Power Menu: fuzzel" { spawn "bash" "/home/unt32/.script/fuzzel_power.sh"; }

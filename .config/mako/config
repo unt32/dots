@@ -17,7 +17,7 @@ border-color=#aaaaaaff
 font=Monospace 12
 
 # --- Behavior ---
-default-timeout=180000
+default-timeout=90000
 ignore-timeout=1
 max-icon-size=48
 markup=1
