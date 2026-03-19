@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=vim
-Exec=alacritty -e vim %f
+Exec=foot -e vim %f
 Type=Application
 MimeType=text/plain;
 Terminal=false

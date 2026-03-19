@@ -1,0 +1,19 @@
+colors:
+  body: none
+  date: cyan
+  tags: yellow
+  title: magenta
+default_hour: 9
+default_minute: 0
+editor: vim
+encrypt: false
+highlight: true
+indent_character: '|'
+journals:
+  default:
+    journal: /home/unt32/Documents/jrnl
+linewrap: 79
+tagsymbols: '#@'
+template: false
+timeformat: '%F %r'
+version: v4.2.1
