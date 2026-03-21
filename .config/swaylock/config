@@ -6,7 +6,7 @@ datestr=%a, %d.%m.%y
 
 # Background
 color=000000
-image=/home/unt32/Pictures/wallpaper
+#image=/home/unt32/Pictures/wallpaper
 scaling=fill
 effect-blur=9x9
 

@@ -1,7 +1,4 @@
 #!/bin/bash
-# Fuzzel Power Control Menu
-# Compositor: niri
-# Locker: swaylock (reads ~/.config/swaylock/config)
 
 LOCK="󰌾  Lock"
 LOGOUT="󰗽  Logout"
@@ -10,12 +7,14 @@ HIBERNATE="󰒲  Hibernate"
 REBOOT="󰑓  Reboot"
 SOFT_REBOOT="󰑓  Soft Reboot"
 FIRMWARE="󰚑  Firmware Setup"
+SUSPEND="󰤄  Sleep"
 SHUTDOWN="󰐥  Shutdown"
 
 CHOICE=$(printf '%s\n' \
     "$LOCK" \
     "$LOGOUT" \
     "$SCREEN_OFF" \
+    "$SUSPEND" \
     "$HIBERNATE" \
     "$REBOOT" \
     "$SOFT_REBOOT" \
@@ -34,6 +33,9 @@ case "$CHOICE" in
         ;;
     "$SCREEN_OFF")
         niri msg action power-off-monitors && swaylock
+        ;;
+    "$SUSPEND")
+        systemctl suspend
         ;;
     "$HIBERNATE")
         systemctl hibernate

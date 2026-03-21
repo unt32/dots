@@ -1,8 +1,8 @@
 colors:
   body: none
-  date: cyan
+  date: magenta
   tags: yellow
-  title: magenta
+  title: cyan
 default_hour: 9
 default_minute: 0
 editor: vim
@@ -11,7 +11,7 @@ highlight: true
 indent_character: '|'
 journals:
   default:
-    journal: /home/unt32/Documents/jrnl
+    journal: /home/unt32/Documents/jrnl/jrnl
 linewrap: 79
 tagsymbols: '#@'
 template: false
