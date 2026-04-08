@@ -1,42 +1,31 @@
-[hidden]
-format=(hidden)
-
-# --- Layout ---
-width=340
+font=monospace 12
+format=<b>%a ⏵</b> %s\n%b
+sort=-time
+layer=overlay
+anchor=top-right
+background-color=#0b0b0b
+text-color=#d0d0d0
+width=300
 height=110
-margin=10
-padding=10
-border-size=2
-border-radius=4
-
-background-color=#1e2127ff
-text-color=#ffffffff
-border-color=#aaaaaaff
-
-# --- Typography ---
-font=Monospace 12
-
-# --- Behavior ---
-default-timeout=90000
+margin=5
+padding=5
+border-size=4
+border-color=#505050
+border-radius=8
+icons=0
+max-icon-size=64
+default-timeout=60000
 ignore-timeout=1
-max-icon-size=48
-markup=1
-actions=1
 
-# Urgency: low
 [urgency=low]
-background-color=#1e2127ee
-text-color=#5c6370ff
-border-color=#3e4451ff
+border-color=#505050
 
-# Urgency: normal
 [urgency=normal]
-background-color=#1e2127ff
-text-color=#abb2bfff
-border-color=#61afefff
+border-color=#7fc8ff
 
-# Urgency: high (critical)
 [urgency=high]
-background-color=#1e2127ff
-text-color=#e06c75ff
-border-color=#e06c75ff
+border-color=#ff5555
+default-timeout=0
+
+[summary~="log-.*"]
+border-color=#50fa7b
