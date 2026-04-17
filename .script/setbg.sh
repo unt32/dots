@@ -7,7 +7,6 @@ if [ ! -d "$WALLPAPER_DIR" ]; then
 	exit 1
 fi
 
-
 IMAGE_PATH=$(find "$WALLPAPER_DIR" -type f -iregex '.*\.\(jpg\|jpeg\|png\|gif\|webp\)$' | shuf -n 1)
 
 if [ -z "$IMAGE_PATH" ]; then
@@ -16,6 +15,5 @@ if [ -z "$IMAGE_PATH" ]; then
 fi
 
 echo "Setting background to: $IMAGE_PATH"
-
 
 swaybg -i "$IMAGE_PATH" -m fill
