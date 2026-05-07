@@ -1,8 +1,8 @@
 #!/bin/bash
 
-AUDIO="󰕾  Audio"
+AUDIO="󰕾  Audio/Sound"
 BLUETOOTH="󰂯  Bluetooth"
-NETWORK="󰤨  Network"
+NETWORK="󰤨  Network/Wi-Fi"
 CHANGEBG="󰆍  Change Background"
 SERVICES="󰍹  Services"
 

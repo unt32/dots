@@ -7,8 +7,8 @@ HIBERNATE="󰒲  Hibernate"
 REBOOT="󰑓  Reboot"
 SOFT_REBOOT="󰑓  Soft Reboot"
 FIRMWARE="󰚑  Firmware Setup"
-SUSPEND="󰤄  Sleep"
-SHUTDOWN="󰐥  Shutdown"
+SUSPEND="󰤄  Sleep/Suspend"
+SHUTDOWN="󰐥  Shutdown/Poweroff"
 
 CHOICE=$(printf '%s\n' \
 	"$LOCK" \
@@ -35,7 +35,7 @@ case "$CHOICE" in
 	niri msg action power-off-monitors && swaylock
 	;;
 "$SUSPEND")
-	systemctl suspend
+	systemctl suspend-then-hibernate
 	;;
 "$HIBERNATE")
 	systemctl hibernate
