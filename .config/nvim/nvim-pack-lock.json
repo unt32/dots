@@ -1,0 +1,60 @@
+{
+  "plugins": {
+    "gruvbox.nvim": {
+      "rev": "154eb5ff5b96d0641307113fa385eaf0d36d9796",
+      "src": "https://github.com/ellisonleao/gruvbox.nvim"
+    },
+    "kanagawa.nvim": {
+      "rev": "bb85e4bfc8d89b0e62c8fa53ccdd13d12e2f77b3",
+      "src": "https://github.com/rebelot/kanagawa.nvim"
+    },
+    "mini.basics": {
+      "rev": "b5be271ebe862ca0570e450976799554e585d16e",
+      "src": "https://github.com/nvim-mini/mini.basics"
+    },
+    "mini.colors": {
+      "rev": "3c67f88070edb27035ae10c4fd094650a7a8efc7",
+      "src": "https://github.com/nvim-mini/mini.colors"
+    },
+    "mini.completion": {
+      "rev": "0aeee1231b90d70563e24facc238ab4359b8d5fc",
+      "src": "https://github.com/nvim-mini/mini.completion"
+    },
+    "mini.cursorword": {
+      "rev": "331bc17172e41343d39d91a4ab571d510766812e",
+      "src": "https://github.com/nvim-mini/mini.cursorword"
+    },
+    "mini.files": {
+      "rev": "a5689dae6b732955e33eec225b798d6815063179",
+      "src": "https://github.com/nvim-mini/mini.files"
+    },
+    "mini.icons": {
+      "rev": "e56797f90192d81f1fda02e662fc3e8e3d775027",
+      "src": "https://github.com/nvim-mini/mini.icons"
+    },
+    "mini.move": {
+      "rev": "b9e452f9c83565a1520e14f7531632160f3b0170",
+      "src": "https://github.com/nvim-mini/mini.move"
+    },
+    "mini.nvim": {
+      "rev": "fe1aa97c8c7408f3def6336f7082237e8cf67833",
+      "src": "https://github.com/nvim-mini/mini.nvim"
+    },
+    "mini.snippets": {
+      "rev": "cf5607c66571d130663fd20761d7cbebdbbf713d",
+      "src": "https://github.com/nvim-mini/mini.snippets"
+    },
+    "mini.surround": {
+      "rev": "580e4cb98c5900d9fe743865fb5a5b2178b4ab18",
+      "src": "https://github.com/nvim-mini/mini.surround"
+    },
+    "moonfly": {
+      "rev": "261664f92ed51cf0c077555b2d4b2530307eac17",
+      "src": "https://github.com/bluz71/vim-moonfly-colors"
+    },
+    "nvim-lspconfig": {
+      "rev": "bfcc0171a43f22afa61d927ffe9fcb6cb85dc99e",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    }
+  }
+}
