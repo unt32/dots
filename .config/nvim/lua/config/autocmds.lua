@@ -6,3 +6,25 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
+local augroup = vim.api.nvim_create_augroup("AutoOpenFilePicker", { clear = true })
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  group = augroup,
+  callback = function(data)
+    local is_dir = vim.fn.isdirectory(data.file) == 1
+
+    if is_dir then
+      Snacks.explorer()
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd("DirChanged", {
+  group = augroup,
+  callback = function()
+    vim.schedule(function()
+      Snacks.explorer({ focus = false })
+    end)
+  end,
+})

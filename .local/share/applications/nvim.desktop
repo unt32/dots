@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=nvim
+Exec=foot -a nvim -e nvim %f
+Type=Application
+MimeType=text/plain;
+Terminal=false
+Icon=nvim
