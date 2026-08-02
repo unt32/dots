@@ -10,7 +10,12 @@ export EDITOR=vim
 alias ls='ls --color=auto'
 alias l='ls --color=auto -lah'
 alias grep='grep --color=auto'
-PS1='\[$(tput setaf 2)\][\u@\h \w]\$\[$(tput sgr0)\] '
+
+if [ "$EUID" -eq 0 ]; then
+    PS1='\[$(tput setaf 1)\][\u@\h \w]\$\[$(tput sgr0)\] '
+else
+    PS1='\[$(tput setaf 2)\][\u@\h \w]\$\[$(tput sgr0)\] '
+fi
 
 osc7_cwd() {
     local strlen=${#PWD}

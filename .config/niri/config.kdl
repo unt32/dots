@@ -47,6 +47,13 @@ gestures {
     }
 }
 
+output "DP-1" {
+	mode "1920x1080@165.003"
+	scale 1.0
+	transform "normal"
+	position x=0 y=0
+}
+
 output "eDP-1" {
 	mode "3840x2400@60"
 	scale 2.5

@@ -4,7 +4,7 @@ After=graphical-session.target
 Requisite=graphical-session.target
 
 [Service]
-ExecStart=/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+ExecStart=/usr/bin/swayidle -w timeout 290 'niri msg action power-off-monitors' timeout 300 swaylock resume 'niri msg action power-on-monitors' before-sleep swaylock
 Restart=on-failure
 
 [Install]

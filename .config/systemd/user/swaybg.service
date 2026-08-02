@@ -6,3 +6,6 @@ Requisite=graphical-session.target
 [Service]
 ExecStart=/home/unt32/.script/setbg.sh
 Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target
