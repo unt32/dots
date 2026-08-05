@@ -7,32 +7,32 @@ CHANGEBG="󰆍  Change Background"
 SERVICES="󰍹  Services"
 
 CHOICE=$(printf '%s\n' \
-	"$NETWORK" \
-	"$BLUETOOTH" \
-	"$AUDIO" \
-	"$CHANGEBG" \
-	"$SERVICES" |
-	fuzzel --dmenu \
-		--prompt "Settings: " \
-		--lines 5)
+  "$NETWORK" \
+  "$BLUETOOTH" \
+  "$AUDIO" \
+  "$CHANGEBG" \
+  "$SERVICES" |
+  fuzzel --dmenu \
+    --prompt "Settings: " \
+    --lines 5)
 
 case "$CHOICE" in
 "$AUDIO")
-	foot -e wiremix
-	;;
+  foot -e wiremix
+  ;;
 "$BLUETOOTH")
-	foot -e bluetui
-	;;
+  foot -e bluetui
+  ;;
 "$NETWORK")
-	networkmanager_dmenu
-	;;
+  networkmanager_dmenu
+  ;;
 "$CHANGEBG")
-	systemctl restart --user swaybg.service
-	;;
+  systemctl restart --user swaybg.service
+  ;;
 "$SERVICES")
-	foot -e systemctl-tui
-	;;
+  foot -e systemctl-tui
+  ;;
 *)
-	exit 0
-	;;
+  exit 0
+  ;;
 esac

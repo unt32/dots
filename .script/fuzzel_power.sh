@@ -11,48 +11,48 @@ SUSPEND="󰤄  Sleep/Suspend"
 SHUTDOWN="󰐥  Shutdown/Poweroff"
 
 CHOICE=$(printf '%s\n' \
-	"$LOCK" \
-	"$LOGOUT" \
-	"$SCREEN_OFF" \
-	"$SUSPEND" \
-	"$HIBERNATE" \
-	"$REBOOT" \
-	"$SOFT_REBOOT" \
-	"$FIRMWARE" \
-	"$SHUTDOWN" |
-	fuzzel --dmenu \
-		--prompt "Power: " \
-		--lines 8)
+  "$LOCK" \
+  "$LOGOUT" \
+  "$SCREEN_OFF" \
+  "$SUSPEND" \
+  "$HIBERNATE" \
+  "$REBOOT" \
+  "$SOFT_REBOOT" \
+  "$FIRMWARE" \
+  "$SHUTDOWN" |
+  fuzzel --dmenu \
+    --prompt "Power: " \
+    --lines 8)
 
 case "$CHOICE" in
 "$LOCK")
-	swaylock
-	;;
+  swaylock
+  ;;
 "$LOGOUT")
-	niri msg action quit
-	;;
+  niri msg action quit
+  ;;
 "$SCREEN_OFF")
-	niri msg action power-off-monitors && swaylock
-	;;
+  niri msg action power-off-monitors && swaylock
+  ;;
 "$SUSPEND")
-	systemctl suspend-then-hibernate
-	;;
+  systemctl suspend-then-hibernate || systemctl suspend
+  ;;
 "$HIBERNATE")
-	systemctl hibernate
-	;;
+  systemctl hibernate
+  ;;
 "$REBOOT")
-	systemctl reboot
-	;;
+  systemctl reboot
+  ;;
 "$SOFT_REBOOT")
-	systemctl soft-reboot
-	;;
+  systemctl soft-reboot
+  ;;
 "$FIRMWARE")
-	systemctl reboot --firmware-setup
-	;;
+  systemctl reboot --firmware-setup
+  ;;
 "$SHUTDOWN")
-	systemctl poweroff
-	;;
+  systemctl poweroff
+  ;;
 *)
-	exit 0
-	;;
+  exit 0
+  ;;
 esac

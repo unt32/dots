@@ -24,7 +24,7 @@ vim.api.nvim_create_autocmd("DirChanged", {
   group = augroup,
   callback = function()
     vim.schedule(function()
-      Snacks.explorer({ focus = false })
+      Snacks.explorer()
     end)
   end,
 })
