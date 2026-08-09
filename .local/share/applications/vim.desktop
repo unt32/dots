@@ -4,4 +4,4 @@ Exec=foot -e vim %f
 Type=Application
 MimeType=text/plain;
 Terminal=false
-Icon=vim
+Icon=gvim

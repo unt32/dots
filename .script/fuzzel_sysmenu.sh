@@ -30,7 +30,7 @@ case "$CHOICE" in
   systemctl restart --user swaybg.service
   ;;
 "$SERVICES")
-  foot -e systemctl-tui
+  EDITOR=vim foot -e systemctl-tui
   ;;
 *)
   exit 0
