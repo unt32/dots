@@ -136,6 +136,9 @@ binds {
     Mod+O hotkey-overlay-title="System Menu: fuzzel" {
         spawn "bash" "/home/unt32/.script/fuzzel_sysmenu.sh"
     }
+    Mod+V {
+        spawn "bash" "/home/unt32/.script/cliphist-fuzzel-img.sh"
+    }
     XF86AudioRaiseVolume allow-when-locked=true {
         spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"
     }
@@ -416,10 +419,10 @@ binds {
     Mod+Equal {
         set-column-width "+10%"
     }
-    Mod+V {
+    Mod+Ctrl+Space {
         toggle-window-floating
     }
-    Mod+Shift+V {
+    Mod+Space {
         switch-focus-between-floating-and-tiling
     }
     Print {

@@ -6,10 +6,14 @@
 [[ $- != *i* ]] && return
 
 export EDITOR=vim
+export PAGER=less
+export LESS=-R
 
 alias ls='ls --color=auto'
 alias l='ls --color=auto -lah'
 alias grep='grep --color=auto'
+alias tree='tree -C'
+alias cheat='~/.script/cht.sh'
 
 if [ "$EUID" -eq 0 ]; then
   PS1='\[$(tput setaf 1)\][\u@\h \w]\$\[$(tput sgr0)\] '

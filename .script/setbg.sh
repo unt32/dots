@@ -19,7 +19,7 @@ while true; do
   swaybg -i "$IMAGE_PATH" -m fill &
   NEW_PID=$!
 
-  sleep 300
+  sleep 900
 
   [ -n "$OLD_PID" ] && kill "$OLD_PID"
   OLD_PID=$NEW_PID
