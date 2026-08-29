@@ -470,8 +470,3 @@ recent-windows {
         }
     }
 }
-switch-events {
-    lid-close {
-        spawn "systemctl" "restart" "--user" "swaybg.service"
-    }
-}

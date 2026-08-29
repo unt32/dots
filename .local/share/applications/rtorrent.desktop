@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=rtorrent
+Exec=foot -e rtorrent %f
+Type=Application
+MimeType=text/plain;
+Terminal=false
+Icon=rtorrent

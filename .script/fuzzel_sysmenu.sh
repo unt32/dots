@@ -3,18 +3,16 @@
 AUDIO="󰕾  Audio/Sound"
 BLUETOOTH="󰂯  Bluetooth"
 NETWORK="󰤨  Network/Wi-Fi"
-CHANGEBG="󰆍  Change Background"
 SERVICES="󰍹  Services"
 
 CHOICE=$(printf '%s\n' \
   "$NETWORK" \
   "$BLUETOOTH" \
   "$AUDIO" \
-  "$CHANGEBG" \
   "$SERVICES" |
   fuzzel --dmenu \
     --prompt "Settings: " \
-    --lines 5)
+    --lines 4)
 
 case "$CHOICE" in
 "$AUDIO")
@@ -25,9 +23,6 @@ case "$CHOICE" in
   ;;
 "$NETWORK")
   networkmanager_dmenu
-  ;;
-"$CHANGEBG")
-  systemctl restart --user swaybg.service
   ;;
 "$SERVICES")
   EDITOR=vim foot -e systemctl-tui
