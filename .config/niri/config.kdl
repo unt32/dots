@@ -97,6 +97,12 @@ window-rule {
     }
 }
 window-rule {
+    match app-id="org.telegram.desktop$"
+    default-column-width {
+        proportion 0.5
+    }
+}
+window-rule {
     match app-id="mpv$"
     open-fullscreen true
 }

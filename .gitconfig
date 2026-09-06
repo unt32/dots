@@ -1,3 +1,5 @@
 [user]
 	email = vladsaen5@gmail.com
 	name = unt32
+[init]
+	defaultBranch = main
