@@ -12,7 +12,7 @@ return {
       focus = true,
       startinsert = true,
       term = {
-        size = 12
+        size = 12,
       },
       filetype = {
         python = "python3 -u",
@@ -24,5 +24,15 @@ return {
         go = "go run",
       },
     },
+    config = function(_, opts)
+      require("code_runner").setup(opts)
+
+      vim.api.nvim_create_autocmd("TermOpen", {
+        pattern = "term://*",
+        callback = function()
+          vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { buffer = true, noremap = true })
+        end,
+      })
+    end,
   },
 }

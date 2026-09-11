@@ -103,6 +103,11 @@ window-rule {
     }
 }
 window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    open-focused false
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+}
+window-rule {
     match app-id="mpv$"
     open-fullscreen true
 }
@@ -159,6 +164,9 @@ binds {
         spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
     }
     XF86AudioPlay allow-when-locked=true {
+        spawn-sh "playerctl play-pause"
+    }
+    XF86AudioPause allow-when-locked=true {
         spawn-sh "playerctl play-pause"
     }
     XF86AudioStop allow-when-locked=true {
