@@ -97,7 +97,8 @@ window-rule {
     }
 }
 window-rule {
-    match app-id="org.telegram.desktop$"
+    match app-id="^org.telegram.desktop$"
+    match app-id="^translate$"
     default-column-width {
         proportion 0.5
     }
@@ -138,6 +139,9 @@ binds {
     }
     Mod+N hotkey-overlay-title="Open a Code editor: Neovim" {
         spawn "gtk-launch" "nvim"
+    }
+    Mod+T hotkey-overlay-title="Open a Translator: translate-shell" {
+        spawn "gtk-launch" "translate-shell"
     }
     Mod+Slash hotkey-overlay-title="Run an Application: fuzzel" {
         spawn "fuzzel"

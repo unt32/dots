@@ -3,40 +3,51 @@
   "position": "top",
   "height": 36,
   "spacing": 4,
-
-  "modules-left": ["wlr/taskbar"],
-  "modules-center": ["clock"],
+  "modules-left": [
+    "wlr/taskbar"
+  ],
+  "modules-center": [
+    "clock"
+  ],
   "modules-right": [
     "tray",
     "niri/language",
     "backlight",
     "wireplumber",
-    "bluetooth",  
+    "bluetooth",
     "network",
-//    "cpu",
-//    "memory",
+    //    "cpu",
+    //    "memory",
     "battery"
   ],
-
   "clock": {
     "format": "{:%H:%M}",
     "format-alt": "{:%a %Y-%m-%d %H:%M}",
-    "tooltip-format": "<tt>{calendar}</tt>"
+    "tooltip-format": "<span size='12pt'>{calendar}</span>",
+    "calendar": {
+      "mode": "month",
+      "weeks-pos": "left",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#d0d0d0'><b>{}</b></span>",
+        "days": "<span color='#909090'><b>{}</b></span>",
+        "weeks": "<span color='#99ff66'><b>W{}</b></span>",
+        "weekdays": "<span color='#ddaa44'><b>{}</b></span>",
+        "today": "<span color='#66ccff'><b><u>{}</u></b></span>"
+      }
+    }
   },
-
   "wlr/taskbar": {
     "format": "{icon}",
     "icon-size": 20,
     "tooltip-format": "{title}",
     "on-click": "activate"
   },
-  
-   "niri/language": {
+  "niri/language": {
     "format": "{}",
     "format-en": "EN",
     "format-ru": "RU"
   },
-
   "backlight": {
     "device": "intel_backlight",
     "format": "BRT {percent}%",
@@ -44,7 +55,6 @@
     "on-scroll-up": "brightnessctl set +5%",
     "on-scroll-down": "brightnessctl set 5%-"
   },
-
   "wireplumber": {
     "format": "VOL {volume}%",
     "format-muted": "MUTED",
@@ -52,7 +62,6 @@
     "node-type": "Audio/Sink",
     "on-click": "foot -e wiremix"
   },
-
   "network": {
     "format": "NET",
     "format-wifi": "WiFi {essid}",
@@ -63,8 +72,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "on-click": "networkmanager_dmenu"
   },
-  
-"bluetooth": {
+  "bluetooth": {
     "format": "BT",
     "format-connected": "BT {device_alias}",
     "format-connected-battery": "BT {device_alias} {device_battery_percentage}%",
@@ -74,24 +82,26 @@
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
     "on-click": "foot -e bluetui"
   },
-
   "cpu": {
     "format": "CPU {usage}%",
     "tooltip-format": "{avg_frequency} GHz"
   },
-
   "memory": {
     "format": "MEM {percentage}%",
     "tooltip-format": "{used:0.1f}G / {total:0.1f}G"
   },
-
   "battery": {
-    "states": { "warning": 60, "critical": 30 },
+    "states": {
+      "warning": 60,
+      "critical": 30
+    },
     "format": "BAT {capacity}%",
     "format-charging": "CHR {capacity}%",
     "format-plugged": "AC {capacity}%",
     "tooltip-format": "{timeTo} · {power}W"
   },
-
-  "tray": { "icon-size": 18, "spacing": 8 }
+  "tray": {
+    "icon-size": 18,
+    "spacing": 8
+  }
 }

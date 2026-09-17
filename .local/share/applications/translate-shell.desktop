@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=translate-shell
+Exec=foot -a translate -e trans -b -I en:ru
+Type=Application
+MimeType=text/plain;
+Terminal=false
+Icon=preferences-desktop-locale

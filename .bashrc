@@ -14,6 +14,7 @@ alias l='ls --color=auto -lah'
 alias grep='grep --color=auto'
 alias tree='tree -C'
 alias cheat='~/.script/cht.sh'
+alias coinflip='shuf -n 1 -e yes no'
 
 if [ "$EUID" -eq 0 ]; then
   PS1='\[$(tput setaf 1)\][\u@\h \w]\$\[$(tput sgr0)\] '

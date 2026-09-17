@@ -29,6 +29,20 @@ window#waybar {
   padding: 2px 6px;
 }
 
+tooltip {
+  background-color: @bg;
+  background: @bg;
+  opacity: 1;
+  border: 1px solid rgba(208, 208, 208, 0.18);
+  border-radius: 4px;
+  padding: 6px 10px;
+}
+
+tooltip label {
+  color: @fg;
+  background: transparent;
+}
+
 /* ── Base module style ─────────────────────────────────── */
 #clock,
 #backlight,
