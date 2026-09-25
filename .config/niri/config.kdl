@@ -79,6 +79,7 @@ layout {
         off
     }
 }
+spawn-at-startup "playerctld daemon"
 spawn-at-startup "firefox"
 hotkey-overlay {
     skip-at-startup

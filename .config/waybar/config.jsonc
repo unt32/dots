@@ -64,7 +64,7 @@
   },
   "network": {
     "format": "NET",
-    "format-wifi": "WiFi {essid}",
+    "format-wifi": "WiFi",
     "format-ethernet": "ETH",
     "format-disconnected": "NET",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}\n↑{bandwidthUpBits} ↓{bandwidthDownBits}",
@@ -74,8 +74,8 @@
   },
   "bluetooth": {
     "format": "BT",
-    "format-connected": "BT {device_alias}",
-    "format-connected-battery": "BT {device_alias} {device_battery_percentage}%",
+    "format-connected": "BT",
+    "format-connected-battery": "BT",
     "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
