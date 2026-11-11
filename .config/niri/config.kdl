@@ -143,7 +143,10 @@ binds {
         spawn "gtk-launch" "translate-shell"
     }
     Mod+Slash hotkey-overlay-title="Run an Application: fuzzel" {
-        spawn "fuzzel"
+        spawn "~/.script/fuzzel_en.sh"
+    }
+    Mod+Period hotkey-overlay-title="Run an Application: fuzzel" {
+        spawn "~/.script/fuzzel_en.sh"
     }
     Mod+P hotkey-overlay-title="Power Menu: fuzzel" {
         spawn "bash" "/home/unt32/.script/fuzzel_power.sh"
@@ -275,31 +278,29 @@ binds {
     Mod+Ctrl+Shift+L {
         move-column-to-monitor-right
     }
-    // Focus workspace
     Mod+Down {
-        focus-workspace-down
+        focus-window-or-workspace-down
     }
     Mod+Up {
-        focus-workspace-up
+        focus-window-or-workspace-up
     }
     Mod+J {
-        focus-workspace-down
+        focus-window-or-workspace-down
     }
     Mod+K {
-        focus-workspace-up
+        focus-window-or-workspace-up
     }
-    // Move column to workspace
     Mod+Shift+Down {
-        move-column-to-workspace-down
+        move-window-down-or-to-workspace-down
     }
     Mod+Shift+Up {
-        move-column-to-workspace-up
+        move-window-up-or-to-workspace-up
     }
     Mod+Shift+J {
-        move-column-to-workspace-down
+        move-window-down-or-to-workspace-down
     }
     Mod+Shift+K {
-        move-column-to-workspace-up
+        move-window-up-or-to-workspace-up
     }
     // Move workspace itself
     Mod+Page_Down {
@@ -406,12 +407,6 @@ binds {
     }
     Mod+BracketRight {
         consume-or-expel-window-right
-    }
-    Mod+Comma {
-        consume-window-into-column
-    }
-    Mod+Period {
-        expel-window-from-column
     }
     Mod+R {
         switch-preset-column-width

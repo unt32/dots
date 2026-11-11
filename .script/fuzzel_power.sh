@@ -20,7 +20,7 @@ CHOICE=$(printf '%s\n' \
   "$SOFT_REBOOT" \
   "$FIRMWARE" \
   "$SHUTDOWN" |
-  fuzzel --dmenu \
+  ~/.script/fuzzel_en.sh --dmenu \
     --prompt "Power: " \
     --lines 8)
 

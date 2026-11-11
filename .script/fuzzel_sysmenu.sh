@@ -10,7 +10,7 @@ CHOICE=$(printf '%s\n' \
   "$BLUETOOTH" \
   "$AUDIO" \
   "$SERVICES" |
-  fuzzel --dmenu \
+  ~/.script/fuzzel_en.sh --dmenu \
     --prompt "Settings: " \
     --lines 4)
 
